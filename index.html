@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Birthday Surprise 💜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    
+    <div class="calculator-page" id="calculatorPage">
+        <div class="calculator-container">
+            <div class="calculator-title">🎂✨</div>
+            <h2 class="calculator-subtitle">Use the calculator for your surprise! 💜</h2>
+            
+            <div class="calculator-display">
+                <input type="text" class="calc-screen" id="calcScreen" readonly>
+            </div>
+            
+            <div class="calc-buttons">
+                <div class="calc-row">
+                    <button class="calc-btn" onclick="clearScreen()">C</button>
+                    <button class="calc-btn" onclick="deleteLast()">⌫</button>
+                    <button class="calc-btn" onclick="appendToScreen('/')">/</button>
+                    <button class="calc-btn" onclick="appendToScreen('*')">×</button>
+                </div>
+                <div class="calc-row">
+                    <button class="calc-btn" onclick="appendToScreen('7')">7</button>
+                    <button class="calc-btn" onclick="appendToScreen('8')">8</button>
+                    <button class="calc-btn" onclick="appendToScreen('9')">9</button>
+                    <button class="calc-btn" onclick="appendToScreen('-')">-</button>
+                </div>
+                <div class="calc-row">
+                    <button class="calc-btn" onclick="appendToScreen('4')">4</button>
+                    <button class="calc-btn" onclick="appendToScreen('5')">5</button>
+                    <button class="calc-btn" onclick="appendToScreen('6')">6</button>
+                    <button class="calc-btn" onclick="appendToScreen('+')">+</button>
+                </div>
+                <div class="calc-row">
+                    <button class="calc-btn" onclick="appendToScreen('1')">1</button>
+                    <button class="calc-btn" onclick="appendToScreen('2')">2</button>
+                    <button class="calc-btn" onclick="appendToScreen('3')">3</button>
+                    <button class="calc-btn calc-equals" onclick="checkSpecialDate()">=</button>
+                </div>
+                <div class="calc-row">
+                    <button class="calc-btn calc-zero" onclick="appendToScreen('0')">0</button>
+                    <button class="calc-btn" onclick="appendToScreen('.')">.</button>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px; color: #9d4edd; font-size: 0.9rem; font-style: italic;">
+                💡 Try calculating something special... like a date! 😉
+            </p>
+            
+            <div class="error-message" id="errorMessage">
+                Hmm, keep calculating... maybe try a special number! 💕
+            </div>
+        </div>
+    </div>
+    
+    <div class="memories-page" id="memoriesPage">
+        <div class="memories-header">
+            <h1 class="birthday-title">🎉 HAPPY BIRTHDAY! 🎉</h1>
+            <p class="birthday-subtitle">Here are some special memories and wishes just for you! 💜</p>
+        </div>
+        
+        <div class="cards-container">
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-content">
+                            <div class="card-icon">🎂</div>
+                            <h3 class="card-title">Birthday Wishes</h3>
+                            <p class="card-hint">Tap to see my wishes for you!</p>
+                        </div>
+                        <div class="photo-wrapper">
+                            <img src="https://via.placeholder.com/300x200.png?text=Happy+Birthday!" alt="Happy Birthday Pic">
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="card-message">
+                            <p>Happy Birthday! 🎉 Wishing you a day that is as special and wonderful as you are. May your year ahead be filled with endless joy, incredible adventures, and all the success you deserve.</p>
+                            <p>Thank you for being such an amazing person in my life. Cheers to you today! ✨💕</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-content">
+                            <div class="card-icon">📸</div>
+                            <h3 class="card-title">A Favorite Memory</h3>
+                            <p class="card-hint">A special photo just for you!</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="https://via.placeholder.com/300x250.png?text=Our+Memory" alt="Our Memory Photo" class="memory-photo">
+                        <div class="card-message">
+                            <p>Remember this day? It's one of my favorite memories with you. Every moment we spend together creates a beautiful story that I'll always cherish. This picture always makes me smile! 💕</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-content">
+                            <div class="card-icon">💫</div>
+                            <h3 class="card-title">Why You're Special</h3>
+                            <p class="card-hint">Flip to read my feelings</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="https://via.placeholder.com/300x250.png?text=You're+Amazing" alt="Special Memory" class="memory-photo">
+                        <div class="card-message">
+                            <p>Spending time with you is always the highlight of my day. Your kindness, your laughter, and the way you see the world makes everything better.</p>
+                            <p>You have a unique spark that brightens up every room. Never change who you are. 💜</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-content">
+                            <div class="card-icon">🥰</div>
+                            <h3 class="card-title">A Moment to Remember</h3>
+                            <p class="card-hint">Flip to relive the moment</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="https://via.placeholder.com/300x250.png?text=Great+Times" alt="Our First Meet" class="memory-photo">
+                        <div class="card-message">
+                            <p>Thinking back on all our adventures, this one truly stands out. From the silly jokes to the heartfelt conversations, it was a day I'll never forget.</p> 
+                            <p>Moments like these are what make our bond so special. Missing our adventures together! 💕</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-content">
+                             <img src="https://via.placeholder.com/300x200.png?text=Our+Future" alt="Future Memory" class="memory-photo">
+                            <h3 class="card-title">To Our Future</h3>
+                            <p class="card-hint">Flip to see my hopes</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="card-message">
+                            <p>As we celebrate today, I'm also so excited for all the memories we have yet to create. I hope our future is filled with more laughter, more adventures, and more amazing moments together.</p>
+                            <p>Here's to many more years of friendship and fun. No matter where life takes us, I hope we'll always be there for each other. 💜</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-content">
+                            <img src="https://via.placeholder.com/300x200.png?text=A+Final+Note" alt="Special Photo" class="memory-photo">
+                            <h3 class="card-title">A Final Note</h3>
+                            <p class="card-hint">Flip to read my message</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="card-message">
+                            <p>Never forget how incredible you are. Keep chasing your dreams, keep smiling that beautiful smile, and keep being the wonderful person you are. The world is a better place with you in it. 😄💖</p>
+                            <p>I feel so lucky to know you and to share these moments with you. I can’t wait for all the memories we'll make in the future! 💪✨</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
